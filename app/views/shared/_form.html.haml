@@ -1,0 +1,14 @@
+= form_for(@poll) do |f|
+  = render 'shared/errors', object: @poll
+  .form-group
+    = f.label :topic
+    = f.text_area :topic, rows: 3, required: true, class: 'form-control'
+  .panel.panel-default
+    .panel-heading Options
+    .panel-body
+      = f.fields_for :vote_options do |options_form|
+        = render 'vote_option_fields', f: options_form
+      .links
+        = link_to_add_association 'Add option', f, :vote_options
+  = f.submit button_name, class: 'btn btn-primary btn-lg'
+  

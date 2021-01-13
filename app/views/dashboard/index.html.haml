@@ -1,0 +1,87 @@
+%h1 Dashboard
+.h4 
+    %h3= "Polls"
+    
+- @polls.each do |poll|
+    .well
+        %h2
+            = poll.topic
+            %small
+                (voted: #{poll.votes_summary})
+        %p
+            = link_to 'Participate!', poll_path(poll), class: 'btn btn-default btn-lg block'
+        .btn-group
+            = link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default'
+            = link_to 'Delete', poll_path(poll),                        |
+            :method => 'delete',                                          |
+            class: 'btn btn-default', data: {confirm: 'Are you sure?'} |
+
+.container
+    %h3= link_to 'Add poll', new_poll_path, class: 'btn btn-default'
+    
+    
+
+// %p 1. How was the food at the basketball event
+// %button A Amazing
+// %button B Good
+// %button C Bad
+// %br
+// %br
+
+
+// //%button.btn.btn-primary.primary-button{ type: 'submit' } Submit
+
+// %p 2. With classes now being online, how motivated do you feel to do schoolwork?
+// %button A More motivated than in person classes
+// %button B Less motivated than in person classes
+// %button C Same level of motivation
+// %br
+// %br
+
+// %p 3. how was the speech at the event?
+// %button A Motivating
+// %button B Inspiring
+// %button C Boring
+// %br
+// %br
+
+// %p 4. what would you do for the summer?
+// %button A Gym
+// %button B Tennis
+// %button C Soccer
+// %br
+// %br
+
+// %p 5. Whom would you like to date?
+// %button A Americian
+// %button B Italian
+// %button C Russian
+
+// %br
+// %br
+
+// %p 6. Which sports event are you most likely to go to?
+// %button A Soccer
+// %button B Rugby
+// %button C Ice Hockey
+
+// %br
+// %br
+
+// %p 7. Which dining place do you prefer the most?
+// %button A Chenango Room
+// %button B C4
+// %button C Marketplace
+
+// %br
+// %br
+
+// %p 8. Which time of lecture do you prefer?
+// %button A Morning
+// %button B Afternoon
+// %button C Evening
+
+// %br
+// %br
+
+

@@ -1,0 +1,4 @@
+- content_for(:page_header) {"Create a new poll"}
+= render 'shared/form', button_name: 'Create'
+
+%h3= link_to 'Back', dashboard_index_path, class: 'btn btn-default'

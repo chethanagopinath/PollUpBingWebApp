@@ -1,0 +1,4 @@
+- content_for(:page_header) {"Edit poll"}
+= render 'shared/form', button_name: 'Save'
+
+%h3= link_to 'Back', dashboard_index_path, class: 'btn btn-default'
